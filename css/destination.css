@@ -1,0 +1,295 @@
+/* Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 15px;
+    align-items: center;
+    color:#335576;
+
+}
+
+.logo-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin:0;
+}
+
+.menu__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+
+}
+
+.menu__list-item {
+    list-style-type: none;
+
+}
+
+.menu__list-item a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+    display: block;
+    transition: color 0.3s ease;
+
+}
+
+.menu__list-item a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: #e8a88e;
+    transition: width 0.3s ease;
+}
+
+.menu__list-item a:hover::after {
+    width: 100%;
+}
+.menu__list-item a.active::after {
+  content: '';
+  position: absolute;
+  width: 100%; /* This will ensure the underline is always visible for the active item */
+  height: 2px;
+  bottom: -10px;
+  left: 0;
+  background-color: #e8a88e; /* Your underline color */
+  transition: width 0.3s ease;
+}
+
+/* Itinerary */
+.itinerary {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    
+  }
+  .itinerary__image{
+    background-image: url();
+    margin: 0;
+    padding:0;
+    position:relative;
+    width: 100%;
+  }
+
+  .itinerary__header {
+        position:absolute;
+        top: 127px;
+        left: 74px;
+        color: white; 
+        margin: 0 0 40px 0; 
+        font-size: 3rem; 
+      }
+  
+  .itinerary__list-cards{
+    min-width: 1200px; 
+    padding: 0 33px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top:200px;
+    margin:10px;
+ 
+  }
+  .itinerary__column {
+  
+    width: calc((100% / 3) - 40px); 
+    margin: 33px; 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 17px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+  }
+  .itinerary__title{
+  text-align: center;
+  padding: 0 10px;
+  position:relative;
+  }
+  .itinerary__title::after {
+    content: ''; 
+    display: block; 
+    height: 3px; 
+    background-color: #000; 
+    width: calc(100% - 20px); 
+    position: absolute; 
+    left: 10px; 
+    bottom: -10px; 
+  }
+  .itinerary__list{
+    padding:20px 0 0;
+
+  }
+  .itinerary__list li{
+   list-style-type: none;
+   text-align: center;
+
+  }
+  .itinerary__item{
+    background-color: #fefaf5;
+    color: black; 
+    margin-bottom: 10px; 
+    padding: 15px 70px 20px 70px;
+    text-align:center;
+  }
+/*footer */
+footer {
+    background: #fefaf5; 
+    color: #335576;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer__container {
+    display: flex;
+    min-width: 1200px;
+    margin: 0 0 0 80px;
+    justify-content: space-between;
+    padding: 0 33px;
+  }
+  
+  .footer__column {
+    flex: 1; 
+    padding: 0;
+  }
+  .footer__column h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  .footer__column p,
+  .footer__column a {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+  .footer-column a:hover {
+    text-decoration: underline;
+  }
+
+  /* Hours*/
+  .hours__column {
+    flex:2;
+  }
+ 
+  .contact__header{
+    color:#DB7A4E;
+    margin-top:30px;
+    text-transform: uppercase;
+
+  }
+  .contact__email a{
+    text-decoration: none;
+    color:#335576;
+
+  }
+  .hours__subcolumn {
+    flex-basis: 30%; 
+  }
+  
+  .hours__subcolumn h4 {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  .working__hours{
+    display:flex;
+    justify-content:space-between;
+  }
+  .hours__header{
+    font-size:14px;
+    color:#DB7A4E;
+    text-transform: uppercase;
+  }
+ 
+  
+  
+ /* Social Links */
+ a.instagram > img,
+ a.twitter > img{
+    width:24px;
+    height:24px
+   }
+   a.facebook > img{
+     height:24px;
+   }
+   a.instagram,
+   a.facebook{
+    padding-right:20px;
+   }
+.social-link{
+    margin-top:60px;
+}
+
+@media (max-width: 768px) {
+
+  /* Responsive Nagivation */
+  header {
+    flex-direction: column;
+  }
+
+  .logo-title {
+    margin-bottom: 15px;
+  }
+
+  .menu__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu__list-item a {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .itinerary__header {
+    font-size: 2rem; 
+    top: 80px; 
+  }
+
+  .itinerary__column {
+    /* Full width columns for mobile */
+    width: 40vh; /* Adjust width for mobile */
+    margin: 10px 20px; /* Smaller margin for mobile */
+  }
+  .itinerary__list-cards{
+    min-width: 40vh;
+  }
+}
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer__container {
+    flex-direction: column;
+    min-width: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__column {
+    width: 50%;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .working__hours {
+    flex-direction: column;
+  }
+
+  a.instagram,
+  a.facebook,
+  a.twitter {
+    padding-right: 0;
+  }
+
+}
+
+
+ 
+  
